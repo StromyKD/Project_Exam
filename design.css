@@ -1,0 +1,74 @@
+body {
+    font-family: sans-serif;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+  }
+  
+  form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+  }
+  
+  input:focus {
+    border-color: #333;
+    outline: none;
+  }
+  
+  button {
+    padding: 10px 16px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+  }
+  
+  button:hover {
+    background: #555;
+  }
+  
+  #people-list {
+    margin-top: 20px;
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+  
+  #people-list li {
+    background: #fafafa;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: auto;
+    gap: 6px;
+  }
+  
