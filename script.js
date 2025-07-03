@@ -2,7 +2,6 @@ const form = document.getElementById('person-form');
 const fullNameInput = document.getElementById('fullName');
 const emailInput = document.getElementById('email');
 const ageInput = document.getElementById('age');
-const hobbyInput = document.getElementById('hobby');
 const message = document.getElementById('message');
 const list = document.getElementById('people-list');
 
@@ -12,10 +11,9 @@ form.addEventListener('submit', function(event) {
   const fullName = fullNameInput.value.trim();
   const email = emailInput.value.trim();
   const age = parseInt(ageInput.value.trim());
-  const hobby = hobbyInput.value.trim(); 
 
   if (fullName === "" || email === "" || isNaN(age)) {
-    showMessage("Please fill in all required fields.");
+    showMessage("Please fill in all fields.");
     return;
   }
 
@@ -30,7 +28,7 @@ form.addEventListener('submit', function(event) {
   }
 
   if (age > 18) {
-    addPersonToList(fullName, email, age, hobby);
+    addPersonToList(fullName, email, age);
     form.reset();
     message.textContent = "";
   } else {
@@ -47,13 +45,8 @@ function isValidEmail(email) {
   return /^\S+@\S+\.\S+$/.test(email);
 }
 
-function addPersonToList(fullName, email, age, hobby) {
+function addPersonToList(fullName, email, age) {
   const li = document.createElement('li');
-  li.innerHTML = `
-    <strong>Full Name:</strong> ${fullName}<br />
-    <strong>Email:</strong> ${email}<br />
-    <strong>Age:</strong> ${age}<br />
-    <strong>Hobby:</strong> ${hobby || 'N/A'}
-  `;
+  li.textContent = `Full Name: ${fullName}, Email: ${email}, Age: ${age}`;
   list.appendChild(li);
 }
